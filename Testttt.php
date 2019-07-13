@@ -33,7 +33,7 @@ li a:hover {
 <center><image src="img.jpg" height="100" width="200"></center>
 <ul>
   <li><a class="active" href="#home">About us</a></li>
-  <li><a href="#news">Gallery</a></li>
+  <li><a href="#gallery">Gallery</a></li>
   <li><a href="#about">Events</a></li>
   <li><a href="Regis.php">Register</a></li>
   <li><a href="ree.php">Login Admin</a></li>
