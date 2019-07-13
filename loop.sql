@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2019 at 03:33 PM
+-- Generation Time: Jul 13, 2019 at 05:54 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -60,11 +60,12 @@ INSERT INTO `cluster` (`cid`, `clstrname`) VALUES
 
 CREATE TABLE `resource` (
   `sid` int(100) NOT NULL,
-  `available` tinyint(1) NOT NULL,
-  `verified` int(100) NOT NULL,
+  `available` tinyint(1) NOT NULL DEFAULT 1,
+  `verified` tinyint(100) NOT NULL DEFAULT 0,
   `rdescription` varchar(2000) NOT NULL,
   `Repicture` blob NOT NULL,
-  `rname` varchar(100) NOT NULL
+  `rname` varchar(100) NOT NULL,
+  `rid` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -127,7 +128,7 @@ CREATE TABLE `teachers` (
 -- Indexes for table `resource`
 --
 ALTER TABLE `resource`
-  ADD PRIMARY KEY (`rname`);
+  ADD PRIMARY KEY (`rid`);
 
 --
 -- Indexes for table `school`
