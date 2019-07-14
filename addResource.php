@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 <<<<<<< HEAD
 if(!isset($_SESSION)) 
@@ -130,3 +131,7 @@ if(!isset($_SESSION))
 
 </body>
 </html>
+=======
+<?php 
+?>
+>>>>>>> 01651b9968d1e7566411caa86e6e7381759b5a78
