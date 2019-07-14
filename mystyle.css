@@ -72,7 +72,7 @@ form {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 0 50px;
+	padding: 0 100px;
 	height: 100%;
 	text-align: center;
 }
@@ -92,10 +92,14 @@ input {
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 				0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
+<<<<<<< HEAD
 	overflow: hidden;
 	width: 500px;
+=======
+	/*width: 768px;*/
+>>>>>>> 812cdc92fe42da411641008265c3e77b7361ab3b
 	max-width: 100%;
-	min-height: 480px;
+	max-height: 100%;
 }
 
 .form-container {

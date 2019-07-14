@@ -1,37 +1,39 @@
-<?php
-session_start();
-//$_SESSION['name']=$name;
-$name="School1";
-
-$con=mysqli_connect("localhost","root","","loop");
-if(isset($_POST['submit']))
-{
-	$cluster= $_POST ['cluster'];
-	echo $cluster;
-
-	$sql="UPDATE school SET  cno= '$cluster' WHERE sname = '$name'";
-	$verify=mysqli_query($con,$sql);
-//header("Location:re.php");
-}
-
- ?>
- <!DOCTYPE html>
  <html>
  <head>
  	<title></title>
+ 	<link rel = "stylesheet" href = "mystyle.css" type = "text/css">s
  </head>
- <body>
- <form action="#" method="post">
- 	<?php 
- 	$result = mysqli_query($con,"SELECT clstrname FROM cluster");
- 	 while ($row = mysqli_fetch_array($result)) {
- 	?>
- 	<input type="radio" name="cluster" value="<?php echo $row['clstrname']; ?>"><?php echo $row['clstrname']; ?><br>
+ <body style = 'background-color : #2D3561 '>
+
+
+ <form action="dashboardSchool.php" method="POST">
  	
+ 	<?php 
+ 	$con=mysqli_connect("localhost","root","","loop");
+ 	$result1 = mysqli_query($con,"SELECT cno from cluster");
+ 	while($row1 = mysqli_fetch_array($result1)) {
+ 		
+ 		 $var = $row1['cno'];
+ 		 echo " "; 	?>
+ 		 <table>
+ 		 	<tr>
+ 		 		
+ 	
+ 	<input type = "radio" name = "<?php echo $row1['cno'];?>" value = "<?php echo $row1['cno'];?>" ><b>CLUSTER <?php echo $var;?></b>  <br>
+ 	
+ 	<?php 
+ 	$result = mysqli_query($con,"SELECT sname,saddress FROM school WHERE $var = school.cno");	
+ 	while ($row = mysqli_fetch_array($result)){?>
+ 		
+ 	school name:	<?php echo $row["sname"];?><br>
+ 	
+ 	school address: <?php echo $row["saddress"];?><br>
+ 	<br></tr></table>
  	<?php
- }
- 	?>
- 	<input type="submit" name="submit">
+ 	}
+ 	}?>
+ 	
+ 	<input type="submit" name="submit"/>
  </form>
  </body>
  </html>

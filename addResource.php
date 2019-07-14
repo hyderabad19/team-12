@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 if(!isset($_SESSION)) 
     { 
         session_start(); 
@@ -6,6 +7,10 @@ if(!isset($_SESSION))
     
 
     $sname1=$_SESSION["aname"];
+=======
+    session_start();
+    $sid=$_SESSION["sid"];
+>>>>>>> 812cdc92fe42da411641008265c3e77b7361ab3b
     $conn = mysqli_connect("localhost","root","","loop");
     if($conn->connect_error){
         die("COnnection Error!! ".$conn->connect_error);
