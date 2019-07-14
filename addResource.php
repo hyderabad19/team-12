@@ -1,7 +1,7 @@
 <?php
     session_start();
     $sid=$_SESSION["sid"];
-    $conn = mysqli_connect("localhost:3306","root","root","loop");
+    $conn = mysqli_connect("localhost","root","","loop");
     if($conn->connect_error){
         die("COnnection Error!! ".$conn->connect_error);
     }
